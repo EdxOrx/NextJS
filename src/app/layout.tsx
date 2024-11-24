@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -28,7 +29,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        
+        <div className="w-full grid grid-cols-1 xl:grid-cols-1">
+            <div className="h-24 bg-gray-300 mb-2"></div>
+            <div className="bg-gray-300">
+              {children}
+            </div>
+            <div className="h-24 bg-gray-300 mt-2"></div>
+        </div>
       </body>
     </html>
   );
